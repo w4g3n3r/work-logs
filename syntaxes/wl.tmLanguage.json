@@ -1,0 +1,57 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Work Log",	
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#timestamp"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"match": "([A-Z]+)(\\-)(\\d+)",
+				"captures": {
+					"1": { "name": "keyword.control.wl" },
+					"2": { "name": "constant.character.wl" },
+					"3": { "name": "constant.numeric.wl" }
+				}
+			}]
+		},
+		"strings": {
+			"contentName": "string.quoted.double.wl",
+			"begin": "\\]",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "constant.character.escape.wl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {			
+			"patterns": [{
+				"contentName": "comment.line.wl",
+				"begin": "^\\s",
+				"end": "$"
+			}]			
+		},
+		"timestamp": {
+			"patterns": [
+				{					
+					"name": "entity.name.type",
+					"match": "^\\d{4}(-\\d{2}){2}\\s\\d{2}(\\:\\d{2}){2}"
+				}
+			]
+		}
+	},
+	"scopeName": "source.wl"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "work-log",
+  "displayName": "Work Logs",
+  "description": "Work log grammar.",
+  "version": "0.0.1",
+  "publisher": "Brian",
+  "engines": {
+    "vscode": "^1.23.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "wl",
+        "aliases": [
+          "Work Log",
+          "wl"
+        ],
+        "extensions": [
+          ".wl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wl",
+        "scopeName": "source.wl",
+        "path": "./syntaxes/wl.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "wl",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "keybindings": [
+        {
+            "key": "ctrl+alt+z l",
+            "command": "editor.action.insertSnippet",
+            "when": "editorTextFocus",
+            "args": {
+              "langId": "wl",
+              "name": "wl"
+            }
+        }
+    ]
+  }
+}

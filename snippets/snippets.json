@@ -1,0 +1,26 @@
+{
+    "Insert Work Log": {
+        "prefix": "wl",
+        "body" : [
+            "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND [${1:PRJ}-${2:00}] $0"
+        ],
+        "description": "Insert work log."
+    },
+
+    "Insert Work Log (Misc)": {
+        "prefix": "wlm",
+        "body" : [            
+            "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND ${1|[TIME-16] 1:1,[TIME-5] Agile Meeting,[AVALA-1] Release Management,[AIM-96] Code Review,[TIME-14] Continuing Education,[TIME-7] Stand-Up,[TIME-15] Developer Machine Setup,[TIME-4] Employee Training,[TIME-2] Holiday,[TIME-3] Internal Service,[TIME-8] Meetings,[AIM-95] Meetings / Discussions / Misc,[TIME-9] Product Design and R&D,[TIME-1] PTO,[TIME-10] Recruiting,[TIME-17] Team Management,[TIME-6] Time Entry|}"
+
+        ],
+        "description": "Insert a work log for a misc task (ie stand up or time entry)"
+    },
+
+    "Insert Closing Work Log": {
+        "prefix": "wlc",
+        "body" : [
+            "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND $0"
+        ],
+        "description": "Close the previous work log without starting a new one."
+    }
+}
